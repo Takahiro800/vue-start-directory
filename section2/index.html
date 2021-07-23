@@ -5,25 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <script src="vue.js"></script>
+    <script src="../vue.js"></script>
     <div id="app">
-      <h1 :class="classObject">Hello!</h1>
-      <button @click="isActive = !isActive">切り替え</button>
+      <p v-once>{{ message }}</p>
+      <a :[attribute]="url">youtube</a>
+      <a v-bind="{href: urlTwitter, target: blank}">Twitter</a>
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          isActive: true,
-        },
-        computed: {
-          classObject: function () {
-            return { red: this.isActive, "bg-blue": !this.isActive };
-          },
+          message: "Hello Vue!",
+          url: "https://www.youtube.com/",
+          urlTwitter: "https://twitter.com/home",
+          number: 31,
+          attribute: "href",
+          blank: "_blank",
         },
       });
     </script>

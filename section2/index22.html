@@ -7,23 +7,23 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="vue.js"></script>
+    <script src="../vue.js"></script>
     <div id="app">
-      <p v-once>{{ message }}</p>
-      <a :[attribute]="url">youtube</a>
-      <a v-bind="{href: urlTwitter, target: blank}">Twitter</a>
+      <p>現在{{ number }}回クリックされています</p>
+      <button v-on:[event]="countUp">count up!</button>
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          message: "Hello Vue!",
-          url: "https://www.youtube.com/",
-          urlTwitter: "https://twitter.com/home",
-          number: 31,
-          attribute: "href",
-          blank: "_blank",
+          number: 0,
+          event: "click",
+        },
+        methods: {
+          countUp: function () {
+            this.number += 1;
+          },
         },
       });
     </script>
