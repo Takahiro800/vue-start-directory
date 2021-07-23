@@ -18,3 +18,14 @@
 ## v-onの省略
 `@`を使う
 - `v-on:click`と`@click`は同義
+
+## v-modelの導入
+- viewからmodelにデータを渡すことができるようになる
+```javascript
+	<input type="text v-model="message">
+```
+
+- こいつのおかげで双方向データビンディングが可能
+
+# 25 computed プロパティについて
+- dataは初期値のようなもので、動的に定義することはできない（条件分岐とかできない）
