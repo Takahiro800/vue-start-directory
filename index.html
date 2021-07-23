@@ -9,8 +9,9 @@
   <body>
     <script src="vue.js"></script>
     <div id="app">
-      <p>{{ message }}</p>
-      <button v-on:click="reverseMessage">メッセージ反転</button>
+      <p v-once>{{ message }}</p>
+      <a :[attribute]="url">youtube</a>
+      <a v-bind="{href: urlTwitter, target: blank}">Twitter</a>
     </div>
 
     <script>
@@ -18,11 +19,11 @@
         el: "#app",
         data: {
           message: "Hello Vue!",
-        },
-        methods: {
-          reverseMessage: function () {
-            this.message = this.message.split("").reverse().join("");
-          },
+          url: "https://www.youtube.com/",
+          urlTwitter: "https://twitter.com/home",
+          number: 31,
+          attribute: "href",
+          blank: "_blank",
         },
       });
     </script>
