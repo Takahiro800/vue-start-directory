@@ -29,3 +29,15 @@
 
 # 25 computed プロパティについて
 - dataは初期値のようなもので、動的に定義することはできない（条件分岐とかできない）
+- そういう時に使うのが`computed プロパティ`
+```javascript
+        computed: {
+          lessThanThree: function () {
+            return this.counter > 3 ? "3より大きい" : "３以下";
+          },
+        },
+```
+- methodとは違う
+	- computedの方は依存関係によってキャッシュされる
+	- methodはテンプレートに変化が起きて、再描画されるごとに実行される
+	- computedの方は、参照先が変化したときのみに実行される

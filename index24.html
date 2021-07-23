@@ -9,15 +9,21 @@
   <body>
     <script src="vue.js"></script>
     <div id="app">
-      <input type="text v-model="message">
-      <h1>{{message}}</h1>
+      <p>{{counter}}</p>
+      <button @click="counter += 1">+1</button>
+      <p>{{ lessThanThree }}</p>
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          message: "hello",
+          counter: 0,
+        },
+        computed: {
+          lessThanThree: function () {
+            return this.counter > 3 ? "3より大きい" : "３以下";
+          },
         },
       });
     </script>
