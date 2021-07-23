@@ -15,6 +15,7 @@
         マウスを乗せてください<span v-on:mousemove.stop> 反応しないでください </span>
       </p>
       <p>X:{{x}}, Y:{{y}}</p>
+      <input type="text" v-on:keyup.enter="myAlert" />
     </div>
 
     <script>
@@ -35,6 +36,9 @@
           },
           noEvent: function (event) {
             event.stopPropagation();
+          },
+          myAlert() {
+            alert("alert!");
           },
         },
       });
